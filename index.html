@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Utah Bridge to Work — Connecting the workforce that powers Utah's infrastructure</title>
+<meta name="description" content="A Phase Zero workforce coalition uniting education, industry, military, and communities. Flagship matchmaker event, May 2026." />
+<meta property="og:title" content="Utah Bridge to Work" />
+<meta property="og:description" content="Connecting the workforce that designs, builds, and operates the infrastructure powering Utah's future." />
+<meta property="og:image" content="ecosystem.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0B1F3A;
+    --navy-deep: #081628;
+    --navy-2: #14304F;
+    --orange: #C04A2B;
+    --orange-hover: #A93F23;
+    --ink: #111111;
+    --body: #1F2A2C;
+    --muted: #5C6B6E;
+    --rule: #D8DEDF;
+    --warm: #F6F3EE;
+    --teal: #01696F;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--body);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Inter Tight', 'Inter', system-ui, sans-serif;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin: 0 0 0.4em 0;
+    line-height: 1.15;
+    font-weight: 800;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 3.4rem); }
+  h2 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); }
+  h3 { font-size: 1.2rem; font-weight: 700; }
+  p { margin: 0 0 1em 0; }
+  a { color: var(--orange); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+  .narrow { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+  /* NAV */
+  nav.top {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11, 31, 58, 0.97);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  nav.top .inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 28px; max-width: 1200px; margin: 0 auto;
+  }
+  nav.top .brand {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 800; font-size: 1.05rem; color: #fff;
+    letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  nav.top .brand svg { display: block; }
+  nav.top .links { display: flex; gap: 24px; align-items: center; }
+  nav.top .links a {
+    color: rgba(255,255,255,0.82); font-weight: 500; font-size: 0.95rem;
+  }
+  nav.top .links a:hover { color: #fff; text-decoration: none; }
+  nav.top .cta {
+    background: var(--orange); color: #fff !important;
+    padding: 9px 18px; border-radius: 6px; font-weight: 600;
+    font-size: 0.92rem;
+  }
+  nav.top .cta:hover { background: var(--orange-hover); text-decoration: none; }
+  @media (max-width: 760px) {
+    nav.top .links a:not(.cta) { display: none; }
+  }
+
+  /* HERO — graphic centerpiece */
+  section.hero {
+    background: var(--navy-deep);
+    padding: 0; overflow: hidden;
+    position: relative;
+  }
+  .hero-graphic-wrap {
+    width: 100%;
+    background: var(--navy-deep);
+    text-align: center;
+    padding: 0;
+  }
+  .hero-graphic-wrap img {
+    display: block;
+    width: 100%; max-width: 1600px; height: auto;
+    margin: 0 auto;
+  }
+  /* Caption strip immediately under graphic */
+  .hero-caption {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 38px 28px 50px;
+    text-align: center;
+    border-bottom: 4px solid var(--orange);
+  }
+  .hero-caption .eyebrow {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 14px;
+  }
+  .hero-caption h1 {
+    color: #fff; max-width: 22ch; margin: 0 auto 14px;
+    font-weight: 800; line-height: 1.18;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+  }
+  .hero-caption p.sub {
+    color: rgba(255,255,255,0.78); max-width: 64ch; margin: 0 auto 28px;
+    font-size: 1.06rem; line-height: 1.5;
+  }
+  .btn-row {
+    display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn {
+    display: inline-block; padding: 14px 24px; border-radius: 7px;
+    font-weight: 600; font-size: 1rem; transition: all 0.15s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary { background: var(--orange); color: #fff !important; }
+  .btn-primary:hover { background: var(--orange-hover); text-decoration: none; }
+  .btn-secondary {
+    background: transparent; color: #fff !important;
+    border: 1.5px solid rgba(255,255,255,0.4);
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.08); text-decoration: none; }
+
+  /* WHAT IT IS / ISN'T */
+  section.block { padding: 80px 0; }
+  section.block.alt { background: var(--warm); }
+  section.block h2 { margin-bottom: 22px; max-width: 26ch; }
+  section.block p.lead {
+    font-size: 1.12rem; max-width: 65ch; color: var(--body); margin-bottom: 32px;
+  }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  @media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+  .panel {
+    background: #fff; border: 1px solid var(--rule);
+    padding: 30px; border-radius: 10px;
+  }
+  .panel h3 {
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 14px;
+  }
+  .panel p { margin-bottom: 0; font-size: 1rem; }
+  .panel.dark {
+    background: var(--navy); color: #fff; border-color: var(--navy);
+  }
+  .panel.dark h3 { color: var(--orange); }
+  .panel.dark p { color: rgba(255,255,255,0.85); }
+
+  /* THREE ZONES — echoes the graphic's three zones */
+  .zones {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border-radius: 10px; overflow: hidden; margin-top: 18px;
+  }
+  @media (max-width: 760px) { .zones { grid-template-columns: 1fr; } }
+  .zone {
+    padding: 30px 28px; color: #fff;
+    display: flex; flex-direction: column; min-height: 220px;
+  }
+  .zone:nth-child(1) { background: var(--navy); }
+  .zone:nth-child(2) { background: var(--orange); }
+  .zone:nth-child(3) { background: #4F6B2F; }
+  .zone .ztag {
+    font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; opacity: 0.82; margin-bottom: 8px;
+  }
+  .zone h3 {
+    color: #fff; font-size: 1.5rem; margin-bottom: 10px;
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .zone .zsub {
+    font-style: italic; color: rgba(255,255,255,0.78);
+    margin-bottom: 14px; font-size: 0.96rem;
+  }
+  .zone p {
+    font-size: 0.95rem; color: rgba(255,255,255,0.92);
+    margin-bottom: 0; line-height: 1.5;
+  }
+
+  /* THREE AUDIENCE CARDS */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  @media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
+  .card {
+    background: #fff; border: 1px solid var(--rule);
+    border-radius: 10px; padding: 30px 26px;
+    display: flex; flex-direction: column;
+    transition: all 0.2s;
+  }
+  .card:hover {
+    border-color: var(--navy);
+    box-shadow: 0 10px 26px rgba(11, 31, 58, 0.1);
+    transform: translateY(-2px);
+  }
+  .card .tag {
+    font-size: 0.76rem; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 12px;
+  }
+  .card h3 {
+    font-size: 1.35rem; font-weight: 800; margin-bottom: 10px;
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .card ul { margin: 0 0 22px 0; padding-left: 20px; font-size: 0.95rem; }
+  .card ul li { margin-bottom: 6px; }
+  .card .card-cta {
+    margin-top: auto; color: var(--orange); font-weight: 600; font-size: 0.95rem;
+  }
+
+  /* EVENT FACTS */
+  .fact-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    margin: 26px 0 36px;
+  }
+  @media (max-width: 760px) { .fact-grid { grid-template-columns: 1fr 1fr; } }
+  .fact {
+    background: #fff; border: 1px solid var(--rule); border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .fact .label {
+    font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+  }
+  .fact .value { font-weight: 700; color: var(--navy); font-size: 1.05rem; }
+
+  /* PARTNERS */
+  .partner-list {
+    font-size: 1.06rem; color: var(--body); line-height: 1.9;
+    padding: 28px 32px; background: #fff;
+    border: 1px solid var(--rule); border-radius: 10px;
+  }
+  .partner-list strong { color: var(--navy); }
+  .partner-list .growing { color: var(--orange); font-weight: 600; font-style: italic; }
+
+  /* LEADERSHIP */
+  .leadership { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 760px) { .leadership { grid-template-columns: 1fr; } }
+  .leader { background: #fff; border: 1px solid var(--rule); border-radius: 10px; padding: 28px; }
+  .leader h3 { font-size: 1.25rem; margin-bottom: 4px; font-family: 'Inter Tight', sans-serif; }
+  .leader .role { color: var(--orange); font-weight: 600; font-size: 0.92rem; margin-bottom: 12px; }
+  .leader p { font-size: 0.98rem; margin-bottom: 0; }
+
+  /* PRINCIPLES */
+  .principles {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px 28px;
+  }
+  @media (max-width: 760px) { .principles { grid-template-columns: 1fr; } }
+  .principles li {
+    padding-left: 22px; position: relative; font-size: 1rem;
+  }
+  .principles li::before {
+    content: ''; position: absolute; left: 0; top: 10px;
+    width: 8px; height: 8px; background: var(--orange); border-radius: 50%;
+  }
+  .principles li strong { color: var(--navy); }
+
+  /* INTAKE BANNER */
+  .intake-banner {
+    background: var(--teal); color: #fff; border-radius: 10px;
+    padding: 32px 34px;
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  @media (min-width: 760px) {
+    .intake-banner { flex-direction: row; align-items: center; justify-content: space-between; }
+  }
+  .intake-banner h3 { color: #fff; font-size: 1.4rem; margin: 0 0 6px; }
+  .intake-banner p { color: rgba(255,255,255,0.9); margin: 0; }
+  .intake-banner .btn { background: #fff; color: var(--teal) !important; white-space: nowrap; font-weight: 700; }
+  .intake-banner .btn:hover { background: var(--warm); text-decoration: none; }
+
+  /* SECTION KICKER */
+  .section-kicker {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 14px;
+  }
+
+  /* CLOSING BAND */
+  section.close-band {
+    background: var(--navy); color: #fff; padding: 70px 0;
+    text-align: center;
+  }
+  section.close-band h2 {
+    color: #fff; max-width: 26ch; margin: 0 auto 16px;
+  }
+  section.close-band p {
+    color: rgba(255,255,255,0.84); max-width: 60ch;
+    margin: 0 auto 28px; font-size: 1.1rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-deep); color: rgba(255,255,255,0.75);
+    padding: 44px 0 30px; font-size: 0.92rem;
+  }
+  footer .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 760px) { footer .footer-grid { grid-template-columns: 1fr; } }
+  footer h4 {
+    color: #fff; font-size: 0.82rem; letter-spacing: 0.14em;
+    text-transform: uppercase; margin-bottom: 14px; font-weight: 700;
+  }
+  footer a { color: rgba(255,255,255,0.85); }
+  footer a:hover { color: #fff; }
+  footer .legal {
+    border-top: 1px solid rgba(255,255,255,0.12); padding-top: 22px;
+    font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.55;
+  }
+  footer ul { list-style: none; padding: 0; margin: 0; }
+  footer ul li { margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV (dark to match hero) -->
+<nav class="top">
+  <div class="inner">
+    <div class="brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+        <path d="M2 18h20" />
+        <path d="M5 18V8l7-5 7 5v10" />
+        <path d="M5 13h14" />
+      </svg>
+      Utah Bridge to Work
+    </div>
+    <div class="links">
+      <a href="#event">The Event</a>
+      <a href="#partners">Partners</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="cta" href="https://forms.gle/odSEAE2YD7DeaGPL6" target="_blank" rel="noopener">Apply / RSVP</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — the graphic is the hero -->
+<section class="hero">
+  <div class="hero-graphic-wrap">
+    <img src="ecosystem.jpg" alt="Utah Bridge to Work — connecting the workforce that designs, builds, and operates the infrastructure powering Utah's future. Six sectors, three operational zones, and a pipeline from students, veterans, technical colleges, and apprenticeships into real careers." />
+  </div>
+  <div class="hero-caption">
+    <div class="eyebrow">A Phase Zero Workforce Initiative · May 2026</div>
+    <h1>One ecosystem. Real work. Real employers. Real impact.</h1>
+    <p class="sub">A voluntary coalition uniting education, industry, military, and Utah's communities to power the critical infrastructure that powers our future.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://forms.gle/odSEAE2YD7DeaGPL6" target="_blank" rel="noopener">Apply / RSVP for the May 2026 Matchmaker →</a>
+      <a class="btn btn-secondary" href="#about">How it works</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT IS / ISN'T -->
+<section class="block">
+  <div class="narrow">
+    <div class="section-kicker">The model</div>
+    <h2>A matchmaker — not a career fair.</h2>
+    <div class="two-col">
+      <div class="panel">
+        <h3>What it is</h3>
+        <p>A pre-pursuit, market-conditioning program. We bring Utah employers with real near-term openings together with veterans, students, recent graduates, apprenticeship cohorts, and career-changers — at one direct-hire and direct-enroll event in May 2026, with structured follow-up to convert conversations into hires.</p>
+      </div>
+      <div class="panel dark">
+        <h3>What it isn't</h3>
+        <p>Not a generic career fair. Not a marketing roadshow. Not a new legal entity, government program, or revenue venture. Every participating organization brings near-term opportunities — jobs open now, training programs starting soon. No fluff.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE ZONES — mirrors the graphic -->
+<section class="block alt">
+  <div class="narrow">
+    <div class="section-kicker">Three operational zones</div>
+    <h2>Design with vision. Build with purpose. Operate with excellence.</h2>
+    <p class="lead">The day is organized around the same three zones that organize the work itself — so candidates and employers find each other by capability, not by alphabetical booth order.</p>
+
+    <div class="zones">
+      <div class="zone">
+        <div class="ztag">Zone 1 · The Brain</div>
+        <h3>Design &amp; Concept</h3>
+        <div class="zsub">Turning ideas into intelligent, buildable solutions.</div>
+        <p>Engineering · Planning &amp; Architecture · Digital &amp; GIS · Controls &amp; Automation · Project Management</p>
+      </div>
+      <div class="zone">
+        <div class="ztag">Zone 2 · The Hands</div>
+        <h3>Build &amp; Assembly</h3>
+        <div class="zsub">Building today with skill, safety, and pride.</div>
+        <p>Electrical · Mechanical &amp; Piping · Welding &amp; Fabrication · Heavy Equipment · Linework &amp; Utilities</p>
+      </div>
+      <div class="zone">
+        <div class="ztag">Zone 3 · The Cavalry</div>
+        <h3>Operate &amp; Maintain</h3>
+        <div class="zsub">Operating reliably. Maintaining relentlessly. Powering tomorrow.</div>
+        <p>Data Centers · Utilities &amp; Grid Ops · Facilities Management · Field Service · Reliability &amp; Asset Management</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE AUDIENCE CARDS -->
+<section class="block">
+  <div class="narrow">
+    <div class="section-kicker">Find your way in</div>
+    <h2>One short form. Routes to the right person.</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="tag">For Employers</div>
+        <h3>You have openings. We have candidates ready to fill them.</h3>
+        <ul>
+          <li>Booth + on-site interviews at the May 2026 Matchmaker</li>
+          <li>Curated, screened candidates across energy, construction, and data center roles</li>
+          <li>Direct access to veteran, student, and career-changer pipelines</li>
+          <li>No fee to participate; vendor criteria apply</li>
+        </ul>
+        <a class="card-cta" href="https://forms.gle/odSEAE2YD7DeaGPL6" target="_blank" rel="noopener">Apply as an employer →</a>
+      </div>
+      <div class="card">
+        <div class="tag">For Training Providers</div>
+        <h3>Fill your next cohort with motivated, ready candidates.</h3>
+        <ul>
+          <li>Reach prospective enrollees with imminent program start dates</li>
+          <li>Co-market apprenticeships, stackable credentials, and on-the-job pathways</li>
+          <li>Connect directly with employer partners hiring your graduates</li>
+        </ul>
+        <a class="card-cta" href="https://forms.gle/odSEAE2YD7DeaGPL6" target="_blank" rel="noopener">Apply as a training partner →</a>
+      </div>
+      <div class="card">
+        <div class="tag">For Job Seekers</div>
+        <h3>One day. Real jobs. Real training. Real interviews.</h3>
+        <ul>
+          <li>Open to veterans, students, recent graduates, and career changers</li>
+          <li>Bring a résumé and a willingness to interview</li>
+          <li>Employers and training providers ready to hire and enroll on the spot</li>
+          <li>Free to attend</li>
+        </ul>
+        <a class="card-cta" href="https://forms.gle/odSEAE2YD7DeaGPL6" target="_blank" rel="noopener">RSVP to attend →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT -->
+<section class="block alt" id="event">
+  <div class="narrow">
+    <div class="section-kicker">Flagship Event · May 2026</div>
+    <h2>The Utah Bridge to Work Matchmaker</h2>
+    <p class="lead">One day. 20–30 employers. 10–15 training providers. Hundreds of veterans, students, and career-changers — all ready to engage on the spot.</p>
+
+    <div class="fact-grid">
+      <div class="fact"><div class="label">Date</div><div class="value">Late May 2026</div></div>
+      <div class="fact"><div class="label">Location</div><div class="value">Wasatch Front (TBA)</div></div>
+      <div class="fact"><div class="label">Format</div><div class="value">In-person, one day</div></div>
+      <div class="fact"><div class="label">Cost</div><div class="value">Free to attend</div></div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h3 style="margin-bottom: 12px;">What happens at the event</h3>
+        <ul style="padding-left: 22px; line-height: 1.7; font-size: 1rem;">
+          <li>Employer + training-provider booths sized for real conversation, not crowd surfing</li>
+          <li>On-site application and résumé support for job seekers</li>
+          <li>Real-time interviews for candidates who arrive prepared</li>
+          <li>Structured introductions between employers and training partners</li>
+          <li>Curated networking for industry, state, and ecosystem leaders</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 12px;">Vendor criteria</h3>
+        <p style="font-size: 1rem;">Participants must:</p>
+        <ul style="padding-left: 22px; line-height: 1.7; font-size: 1rem;">
+          <li>Be actively hiring or enrolling for openings in the next 6 months</li>
+          <li>Send a representative empowered to accept applications and discuss specifics</li>
+          <li>Commit to basic post-event follow-up</li>
+          <li>Provide simple outcome data after the event</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 38px;" class="intake-banner">
+      <div>
+        <h3>Apply or RSVP — one short form</h3>
+        <p>Employers, training providers, sponsors, candidates: same intake form, takes 4 minutes.</p>
+      </div>
+      <a class="btn" href="https://forms.gle/odSEAE2YD7DeaGPL6" target="_blank" rel="noopener">forms.gle/odSEAE2YD7DeaGPL6 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="block" id="partners">
+  <div class="narrow">
+    <div class="section-kicker">Built on partnership</div>
+    <h2>Building this with Utah's industry, education, and public-sector leaders.</h2>
+    <p class="lead">Utah Bridge to Work is a voluntary coalition — not a new agency, not a vendor, not a fundraising vehicle. Every partner contributes time, networks, venues, or in-kind support around a shared outcome: real Utah hires and enrollments.</p>
+
+    <div class="partner-list">
+      <strong>Utah Grid Edge Forum</strong> · <strong>Beehive Energy Alliance</strong> · <strong>Utah Office of Energy Development</strong> · <strong>Wheeler CAT</strong> · <strong>Northwest Lineman College</strong> · <strong>Quanta Services</strong> · <span class="growing">and growing</span>
+    </div>
+
+    <div class="cards" style="margin-top: 32px;">
+      <div class="card">
+        <div class="tag">Sponsor</div>
+        <h3>Sponsor the event</h3>
+        <p style="font-size: 0.97rem;">Cover a tangible cost: venue, catering, candidate transportation, on-site interview rooms. Recognition modest and proportional.</p>
+        <a class="card-cta" href="#contact">Talk to us →</a>
+      </div>
+      <div class="card">
+        <div class="tag">Partner</div>
+        <h3>Join the Core Partner Council</h3>
+        <p style="font-size: 0.97rem;">Industry, education, state, or community organizations contributing networks, candidates, or operational support.</p>
+        <a class="card-cta" href="https://forms.gle/odSEAE2YD7DeaGPL6" target="_blank" rel="noopener">Apply →</a>
+      </div>
+      <div class="card">
+        <div class="tag">Co-Market</div>
+        <h3>Co-market the event</h3>
+        <p style="font-size: 0.97rem;">Trade associations, alumni networks, veterans organizations: share the event with your membership in exchange for visibility.</p>
+        <a class="card-cta" href="#contact">Get the toolkit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="block alt" id="about">
+  <div class="narrow">
+    <div class="section-kicker">About</div>
+    <h2>Why Phase Zero, and who's driving it.</h2>
+    <p class="lead">Utah Bridge to Work was conceived as a grassroots, fast-moving response to a structural workforce gap — built by industry, education, and public-sector leaders willing to act before formal programs catch up.</p>
+
+    <div class="two-col">
+      <div>
+        <h3 style="margin-bottom: 12px;">The Phase Zero approach</h3>
+        <p style="font-size: 1rem;">Phase Zero means operating upstream of traditional workforce programs — before formal projects, contracts, or requisitions exist. Major Utah infrastructure projects face a real risk: a lack of ready workforce and aligned training pipelines that can delay or derail execution.</p>
+        <p style="font-size: 1rem;">Bridge to Work anticipates that gap rather than reacting to it. Low-cost, low-risk, high-leverage — a "first, fast mover" model designed to test what works before institutionalizing anything. Announced at the Utah Grid Edge Forum in March 2026, moved from idea to flagship event in roughly 90 days.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 12px;">Operating principles</h3>
+        <ul class="principles">
+          <li><strong>Speed</strong> over bureaucracy</li>
+          <li><strong>Trust</strong> over contracts</li>
+          <li><strong>Outcomes</strong> over optics</li>
+          <li><strong>Complement</strong>, don't duplicate</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin: 50px 0 18px;">Leadership</h3>
+    <div class="leadership">
+      <div class="leader">
+        <h3>Steve Thomas</h3>
+        <div class="role">Program Lead</div>
+        <p>Director of Energy &amp; Infrastructure at Currie &amp; Brown. Steve convenes Bridge to Work, sets strategic direction, and serves as the program's primary point of accountability. He brings deep industry, government, and education relationships across Utah's energy and infrastructure ecosystem, and also convenes the Utah Grid Edge Forum.</p>
+      </div>
+      <div class="leader">
+        <h3>Anca Matcovschi</h3>
+        <div class="role">Program Co-Lead</div>
+        <p>Ph.D. candidate and adjunct professor specializing in veterans workforce re-entry. Anca leads candidate outreach and preparation, contributes curriculum and inclusion expertise, and ensures Bridge to Work reaches veterans, students, and underrepresented talent across Utah.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="block" id="contact">
+  <div class="narrow">
+    <div class="section-kicker">Get involved</div>
+    <h2>Tell us how you want to plug in.</h2>
+    <p class="lead">One short form gets you to the right person. We respond within 2 business days.</p>
+
+    <div class="intake-banner">
+      <div>
+        <h3>Bridge to Work intake form</h3>
+        <p>Employers, training providers, sponsors, candidates — same form, routes to the right lead.</p>
+      </div>
+      <a class="btn" href="https://forms.gle/odSEAE2YD7DeaGPL6" target="_blank" rel="noopener">forms.gle/odSEAE2YD7DeaGPL6 →</a>
+    </div>
+
+    <div class="two-col" style="margin-top: 34px;">
+      <div class="panel">
+        <h3>Direct contact</h3>
+        <p><strong>General:</strong> <a href="mailto:info@utahbridgetowork.org">info@utahbridgetowork.org</a></p>
+        <p><strong>Press / media:</strong> <a href="mailto:press@utahbridgetowork.org">press@utahbridgetowork.org</a></p>
+        <p style="margin-bottom: 0;"><strong>Sponsor inquiries:</strong> route through info@ — Steve will respond directly.</p>
+      </div>
+      <div class="panel">
+        <h3>What you'll be asked</h3>
+        <p style="margin-bottom: 0;">Organization name, primary contact, what you're hiring for or enrolling, target dates, and how you'd like to participate. Four minutes. Single form.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING BAND -->
+<section class="close-band">
+  <div class="narrow">
+    <h2>Utah's next infrastructure decade starts with the workforce we build now.</h2>
+    <p>Join the May 2026 Matchmaker as an employer, a training partner, a sponsor, or a candidate.</p>
+    <a class="btn btn-primary" href="https://forms.gle/odSEAE2YD7DeaGPL6" target="_blank" rel="noopener">Get Involved →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Bridge to Work</h4>
+        <p style="margin-bottom: 0; max-width: 38ch;">A voluntary coalition of Utah industry, education, and public-sector partners. Phase Zero pilot, May 2026.</p>
+        <p style="margin-top: 14px; margin-bottom: 0; font-size: 0.85rem; color: rgba(255,255,255,0.55); font-style: italic;">Powering Utah. Powering America.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#event">The Event</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@utahbridgetowork.org">info@utahbridgetowork.org</a></li>
+          <li>Utah · USA</li>
+          <li><a href="https://forms.gle/odSEAE2YD7DeaGPL6" target="_blank" rel="noopener">Apply / RSVP</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      © 2026 Utah Bridge to Work. A voluntary Phase Zero workforce coalition. Unofficial, unaffiliated, but sailing strong.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
